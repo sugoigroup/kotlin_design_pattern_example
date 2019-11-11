@@ -1,9 +1,6 @@
 package com.example.myapplication
 
-import com.example.myapplication.designpattern.Car
-import com.example.myapplication.designpattern.Delirived
-import com.example.myapplication.designpattern.DpDelegate
-import com.example.myapplication.designpattern.DpStragy
+import com.example.myapplication.designpattern.*
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -37,6 +34,32 @@ class ExampleUnitTestDesignPattern {
         val b = DpStragy()
         assertEquals("I am Flay", b.makeDuck(DpStragy.makeWhiteDuck()).fly())
         assertEquals("I Cant Flay", b.makeDuck(DpStragy.makeRubberDuck()).fly())
+
+
+    }
+
+    @Test
+    fun test_decorater() {
+        val b = DpDecorater().makeCoffee()
+        assertEquals(1000, b.cost())
+
+        val addMilk = Milk(b);
+        assertEquals(1100, addMilk.cost())
+
+        val addSugar = Sugar(addMilk);
+        assertEquals(1100, addSugar.cost())
+
+        val addCream = Cream(addSugar);
+        assertEquals(1500, addCream.cost())
+
+
+    }
+
+    @Test
+    fun test_dommand() {
+
+
+        assertEquals("burder", DpCommand().orderBurger())
 
 
     }

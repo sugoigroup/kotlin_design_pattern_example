@@ -28,7 +28,9 @@ class DpDelegate(val x:Int) : Base,Base2{
     }
 }
 
-class Delirived(b:Base, c:Base2) : Base by b, Base2 by c
+class Delirived(b:Base, c:Base2) : Base by b, Base2 by c {
+    // print, print2 를 오버라이드 안해도 사용가능
+}
 
 
 
