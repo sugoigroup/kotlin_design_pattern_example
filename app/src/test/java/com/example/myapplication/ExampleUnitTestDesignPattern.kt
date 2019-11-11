@@ -22,6 +22,7 @@ class ExampleUnitTestDesignPattern {
         assertEquals(150, car.horsePower)
         assertEquals(1, Car.cars.size)
     }
+
     @Test
     fun test_delegate() {
         val b = DpDelegate(150)

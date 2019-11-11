@@ -2,6 +2,10 @@ package com.example.myapplication.designpattern
 
 import kotlin.reflect.KProperty
 
+// https://codechacha.com/ko/kotlin-deligation-using-by/
+//https://namget.tistory.com/category/IT/개발스터디%20디자인패턴
+//https://black-jin0427.tistory.com/193?category=795220
+
 interface Base {
     fun print():Int;
 }

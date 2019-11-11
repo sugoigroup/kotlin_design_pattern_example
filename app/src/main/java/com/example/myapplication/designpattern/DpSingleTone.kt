@@ -1,6 +1,7 @@
 package com.example.myapplication.designpattern
 
 
+///https://codechacha.com/ko/kotlin-object-vs-class/
 //object DpSingleTone {
 //    val cars = mutableListOf<Car>()
 //
