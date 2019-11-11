@@ -13,5 +13,71 @@ package com.example.myapplication.designpattern
 //https://github.com/GustavoAxel/design-patterns-kotlin
 //https://github.com/dbacinski/Design-Patterns-In-Kotlin
 class DpStragy {
+    fun makeDuck(duck:Duck):Duck {
+        return duck
+    }
+
+    companion object {
+        fun makeWhiteDuck(): Duck {
+            return WhiteDuck(ImplFlay(), ImplQuark())
+        }
+        fun makeRubberDuck(): Duck {
+            return RubberDuck(ImplFlayNot(), ImplQuark())
+        }
+    }
+}
+
+abstract  class Duck {
+    abstract fun fly():String
+    abstract fun quark():String
+}
+
+
+class WhiteDuck(val flable:IFlay, val quarkable:IQuark):Duck() {
+    override fun fly():String {
+        return flable.execute();
+    }
+
+    override fun quark():String {
+        return quarkable.execute();
+    }
+
+}
+
+class RubberDuck(val flable:IFlay, val quarkable:IQuark):Duck() {
+    override fun fly():String {
+        return flable.execute();
+    }
+
+    override fun quark():String {
+        return quarkable.execute();
+    }
+
+}
+
+interface IFlay {
+    fun execute():String;
+}
+
+class ImplFlay : IFlay {
+    override fun execute():String {
+        return ("I am Flay")
+    }
+}
+
+class ImplFlayNot : IFlay {
+    override fun execute():String {
+        return ("I Cant Flay")
+    }
+}
+
+interface IQuark {
+    fun execute():String;
+}
+
+class ImplQuark : IQuark {
+    override fun execute():String {
+        return ("I am Quark")
+    }
 
 }
