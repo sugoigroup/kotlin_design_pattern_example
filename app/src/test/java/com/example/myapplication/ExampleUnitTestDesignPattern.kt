@@ -56,11 +56,13 @@ class ExampleUnitTestDesignPattern {
     }
 
     @Test
-    fun test_dommand() {
-
-
+    fun test_command() {
         assertEquals("burder", DpCommand().orderBurger())
+    }
 
-
+    @Test
+    fun test_factory() {
+        val cat = DpFactory().createAnimal("cat");
+        assertEquals(cat as Cat,cat)
     }
 }
